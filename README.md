@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+# Python BeautifulSoup Tutorial
+Python tutorial describing how to use BeautifulSoup for Web Scraping and Data Collection. This was first put together for 'Deep Mind', the machine learning study group at Kroger Digital.
 
-You can use the [editor on GitHub](https://github.com/shoreason/python-beautifulsoup-tutorial/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+View the Slide Show (https://shoreason.github.io/python-beautifulsoup-tutorial/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## About
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This slideshow was created using [Remark](http://remarkjs.com/) and
+is hosted on [Github Pages](https://pages.github.com/).
 
-```markdown
-Syntax highlighted code block
+When you are viewing the slideshow, space advances to the next slide, the up
+and down arrow keys move back and forward.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shoreason/python-beautifulsoup-tutorial/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+If you are the presenter, press C to clone the window (one for the laptop, and
+one for the projector display), and then with the presenter window selected,
+press P to toggle presenter mode.
