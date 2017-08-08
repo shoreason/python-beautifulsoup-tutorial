@@ -174,10 +174,10 @@ print(descs)
 This gives us the rest of the data we are interested in
 
 ```text
-['Tonight', 'Tuesday', 'TuesdayNight', 'Wednesday', 'WednesdayNight', 'Thursday', 'ThursdayNight', 'Friday', 'FridayNight']
 ['IncreasingClouds', 'Patchy Fogthen Sunny', 'IncreasingClouds', 'Patchy Fogthen Sunny', 'Patchy Fog', 'Patchy Fogthen Sunny', 'Patchy Fog', 'Patchy Fogthen Sunny', 'Patchy Fog']
 ['Low: 58 °F', 'High: 70 °F', 'Low: 58 °F', 'High: 70 °F', 'Low: 57 °F', 'High: 68 °F', 'Low: 57 °F', 'High: 68 °F', 'Low: 57 °F']
 ['Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. ', ... , 'Friday Night: Patchy fog after 11pm.  Otherwise, mostly cloudy, with a low around 57.']
 ```
 ---
+# We can now save the data for later use
 
