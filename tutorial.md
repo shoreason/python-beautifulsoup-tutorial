@@ -94,7 +94,6 @@ For which I get this.
 ```css
 font-size: 11pt;
 ```
-Time for some real work
 ---
 # Extracting for We Really Care About
 
@@ -131,5 +130,29 @@ We get this
 ```html
 <div class="tombstone-container">
 <p class="period-name">Tonight<br/><br/></p>
-<p><img alt="Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. " class="forecast-icon" src="newimages/medium/nbkn.png" title="Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. "/></p><p class="short-desc">Increasing<br/>Clouds</p><p class="temp temp-low">Low: 58 °F</p></div>
+<p><img alt="Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. " class="forecast-icon" src="newimages/medium/nbkn.png" title="Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. "/></p>
+  <p class="short-desc">Increasing<br/>Clouds</p>
+  <p class="temp temp-low">Low: 58 °F</p>
+</div>
 ```
+---
+# Optimizing Our Data Extraction
+Firstly, BeautifulSoup provides a way to use CSS selectors to narrow down our search. You can specify an id and class or multiple classes or combine multiple css attributes.
+
+```python
+period_tags = seven_day.select(".tombstone-container .period-name")
+```
+Says, fetch me all elements that within a tag with class = tombstone-container and and also members of class = period-name
+
+Now, rather extract elements one at a time I can apply list comprehension to do this in few steps
+
+```python
+periods = [pt.get_text() for pt in period_tags]
+print(periods)
+```
+Which gives me 
+
+```json
+['Tonight', 'Tuesday', 'TuesdayNight', 'Wednesday', 'WednesdayNight', 'Thursday', 'ThursdayNight', 'Friday', 'FridayNight']
+```
+
