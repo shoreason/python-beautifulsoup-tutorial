@@ -9,7 +9,7 @@ BeautifulSoup is a python package that allows you to extract text data from from
 This tutorial will be based off bs4 (Beautiful Soup 4) and assumes you have python and pip installed. The syntax also assumes python3 though most of this should still work as is in python2.
 
 note:bs3 only works with the python2 series, but bs4 works on both python 2 and python 3.
-credit: Thanks to [https://www.dataquest.io/blog/web-scraping-tutorial-python/](Vik Paruchuri) for reference material for this walkthrough
+credit: Thanks to [Vik Paruchuri](https://www.dataquest.io/blog/web-scraping-tutorial-python/) for reference material for this walkthrough
 
 Ready? To get started install bs4
 
