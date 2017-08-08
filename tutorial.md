@@ -70,4 +70,32 @@ You get this
 ```text
 title
 ```
+
+A little more exploring. 
+
+Let's see if we can find the first h1 value and what attributes it has
+
+```python
+print(soup.h1)
+print(soup.h1.attrs)
+```
+I see when I run it
+
+```html
+<h1 style="font-size: 11pt;">Severe Storms, Heavy Rain and Local Flash Flooding Possible</h1>
+```
+```css
+{'style': 'font-size: 11pt;'}
+```
+Now if I wanted to print the value of the style attribute I run this.
+
+```python
+print(soup.h1.attrs['style'])
+```
+For which I get this.
+
+```css
+font-size: 11pt;
+```
+
 ---
