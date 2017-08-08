@@ -20,24 +20,30 @@ $ pip install beautifulsoup4
 
 # Getting to the data
 
-There are several ways to extract the data from the webpage before we start analysis. One of these is using 'requests'. However, in this case we'll use 'urllib'. So after importing beautifulsoup import 'urllib'
+There are several ways to extract the data from the webpage before we start analysis. One of these is using 'requests'. Another option is to use 'urllib', which is little more limited. So after importing beautifulsoup import 'requests'
 
 ```python
 from bs4 import BeautifulSoup
-import urllib
+import requests
 ```
 It's up to you if you want to create a special variable for the url you are interested in. The next step will be to pull the text from the url.
 
 ```python
-url = 'http://www.aflcio.org/Legislation-and-Politics/Legislative-Alerts' # url of whatever page you are interested in
-r = urllib.urlopen(url).read()
-soup = BeautifulSoup(r)
+url = 'http://forecast.weather.gov/MapClick.php?lat=37.7772&lon=-122.4168#.WYjKidPyvdQ' # url of whatever page you are interested in
+page = requests.get(url)
+soup = BeautifulSoup(page,'html.parser')
 ```
+There are other parsers available other than html.parser (lxml and html5lib).
 
 Now we have our text represented as an object. To print out the raw text (html in this case) we use the prettify() directive which shows the full dowloaded document.
 
 ```python
 print(soup.prettify())
+```
+You can see what this page looks like without being prettified
+
+```python
+print(page.content)
 ```
 
 ---
