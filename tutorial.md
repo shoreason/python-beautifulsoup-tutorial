@@ -217,6 +217,28 @@ This gives us the rest of the data we are interested in
 ---
 # We can now save the data for later use
 
+First, lets import a module for csv support
+
+```python
+import csv
+```
+--
+
+Then we group all our individual 'lists' of data
+
+```python
+newlines = zip(periods, short_descs, temps, descs)
+```
+--
+
+Finally, we create new file to write our data to
+
+```python
+with open('weather.csv', 'w') as f:
+    writer = csv.writer(f)
+    writer.writerows(newlines)
+```    
+
 ---
 
 # Exercise
