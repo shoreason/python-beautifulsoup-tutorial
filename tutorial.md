@@ -47,3 +47,26 @@ print(page.content)
 ```
 
 ---
+
+# Exploring the Page and Data
+
+Now that we have the data we can start exploring it. For starters, lets see if we can find the title of the page
+
+```python
+print(soup.title)
+```
+If you used the url from this walkthrough you should see something like below for your result
+
+```html
+<title>National Weather Service</title>
+```
+What about the name of that specific element?
+
+```python
+print(soup.title.name)
+```
+You get this
+```text
+title
+```
+---
