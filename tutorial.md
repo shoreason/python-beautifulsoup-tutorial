@@ -1,19 +1,19 @@
 # Sho's 20-min Python BeautifulSoup Tutorial
 
-Data analysis starts with getting access to the data and sometimes this data is on the web. For instance you might be interested in extracting data from a list of recipes and indredients on a website. You could be acquiring data from a file, database or API.
+Data analysis starts with getting access to the data and sometimes this data is on the web. For instance you might be interested in extracting data from a list of recipes and ingredients on a website. You could be acquiring data from a file, database or API.
 
 --
 
-Your goal might simply be evaluating the data, like counting the occurences of an item. Or to persist the data for later analysis. This is where a webscraping tool like BeautifulSoup comes in. 
+Your goal might simply be evaluating the data, like counting the occurrences of an item. Or to persist the data for later analysis. This is where a webscraping tool like BeautifulSoup comes in.
 
-BeautifulSoup is a python package that allows you to extract text data from from the web (as HTML) or from XML.
+BeautifulSoup is a python package that allows you to extract text data from the web (as HTML) or from XML.
 
 --
 
 This tutorial will be based off bs4 (Beautiful Soup 4) and assumes you have python and pip installed.
 
 note:bs3 only works with the python2 series, but bs4 works on both python 2 and python 3.
-reference and credit: Thanks to [Vik Paruchuri](https://www.dataquest.io/blog/web-scraping-tutorial-python/) 
+reference and credit: Thanks to [Vik Paruchuri](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
 
 Ready? To get started install bs4
 
@@ -25,7 +25,7 @@ $ pip install beautifulsoup4
 ---
 # Getting to the data
 
-There are several ways to extract the data from the webpage before we start analysis. One of these is using 'requests'. 
+There are several ways to extract the data from the webpage before we start analysis. One of these is using 'requests'.
 
 So, after importing beautifulsoup import 'requests'
 
@@ -40,7 +40,7 @@ It's up to you if you want to create a special variable for the url you are inte
 ```python
 url = 'http://forecast.weather.gov/MapClick.php?lat=37.7772&lon=-122.4168#.WYjKidPyvdQ' # url of whatever page you are interested in
 page = requests.get(url)
-soup = BeautifulSoup(page,'html.parser')
+soup = BeautifulSoup(page.text,'html.parser')
 ```
 --
 
@@ -90,7 +90,7 @@ You get this
 title
 ```
 ---
-# A Little More Exploring 
+# A Little More Exploring
 
 Let's see if we can find the first h1 value and what attributes it has
 
@@ -144,9 +144,9 @@ print(seven_day)
 
 From the results you will notice there are multiple day forecasts and we probably want to grab them all. To grab several elements which match a certain condition we use 'find_all'.
 
-In this next step we'll grab all the forecasts. If you look at previous results you'll notice that all forcasts have this in common: 'class="tombstone-container"'
+In this next step we'll grab all the forecasts. If you look at previous results you'll notice that all forecasts have this in common: 'class="tombstone-container"'
 
-We'll use this then to grab all the forcasts (it's quite possible that there may be more than one atttibute that is unique).
+We'll use this then to grab all the forecasts (it's quite possible that there may be more than one attribute that is unique).
 
 ```python
 forecast_items = seven_day.find_all(class_="tombstone-container")
@@ -188,7 +188,7 @@ periods = [pt.get_text() for pt in period_tags]
 print(periods)
 ```
 --
-Which gives us 
+Which gives us
 
 ```json
 ['Tonight', 'Tuesday', 'TuesdayNight', 'Wednesday', 'WednesdayNight', 'Thursday', 'ThursdayNight', 'Friday', 'FridayNight']
