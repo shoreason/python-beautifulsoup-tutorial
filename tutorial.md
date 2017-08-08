@@ -6,10 +6,10 @@ Your goal might simply be evaluating the data, like counting the occurences of a
 
 BeautifulSoup is a python package that allows you to extract text data from from the web (as HTML) or from XML.
 
-This tutorial will be based off bs4 (Beautiful Soup 4) and assumes you have python and pip installed. The syntax also assumes python3 though most of this should still work as is in python2.
+This tutorial will be based off bs4 (Beautiful Soup 4) and assumes you have python and pip installed.
 
 note:bs3 only works with the python2 series, but bs4 works on both python 2 and python 3.
-credit: Thanks to [Vik Paruchuri](https://www.dataquest.io/blog/web-scraping-tutorial-python/) for reference material for this walkthrough
+reference and credit: Thanks to [Vik Paruchuri](https://www.dataquest.io/blog/web-scraping-tutorial-python/) 
 
 Ready? To get started install bs4
 
@@ -33,6 +33,8 @@ page = requests.get(url)
 soup = BeautifulSoup(page,'html.parser')
 ```
 There are other parsers available other than html.parser (lxml and html5lib).
+
+---
 
 Now we have our text represented as an object. To print out the raw text (html in this case) we use the prettify() directive which shows the full dowloaded document.
 
@@ -95,7 +97,7 @@ For which I get this.
 font-size: 11pt;
 ```
 ---
-# Extracting for We Really Care About
+# Extracting data we really care about
 
 To find an element or piece of data in the DOM you can simply use 'find'. In the case of this walkthrough we want weather data and we're interested in that section.
 
@@ -110,6 +112,8 @@ You can pass it that criteria into the find command
 seven_day = soup.find(id="seven-day-forecast")
 print(seven_day)
 ```
+---
+
 From the results you will notice there are multiple day forecasts and we probably want to grab them all. To grab several elements which match a certain condition we use 'find_all'.
 
 In this next step we'll grab all the forecasts. If you look at previous results you'll notice that all forcasts have this in common: 'class="tombstone-container"'
@@ -155,6 +159,8 @@ Which gives us
 ```json
 ['Tonight', 'Tuesday', 'TuesdayNight', 'Wednesday', 'WednesdayNight', 'Thursday', 'ThursdayNight', 'Friday', 'FridayNight']
 ```
+---
+
 Now we can repeat this with other elements we are interested in
 
 ```python
