@@ -150,9 +150,28 @@ Now, rather extract elements one at a time I can apply list comprehension to do 
 periods = [pt.get_text() for pt in period_tags]
 print(periods)
 ```
-Which gives me 
+Which gives us 
 
 ```json
 ['Tonight', 'Tuesday', 'TuesdayNight', 'Wednesday', 'WednesdayNight', 'Thursday', 'ThursdayNight', 'Friday', 'FridayNight']
 ```
+Now we can repeat this with other elements we are interested in
+
+```python
+short_descs = [sd.get_text() for sd in seven_day.select(".tombstone-container .short-desc")]
+temps = [t.get_text() for t in seven_day.select(".tombstone-container .temp")]
+descs = [d["title"] for d in seven_day.select(".tombstone-container img")]
+print(short_descs)
+print(temps)
+print(descs)
+```
+This gives us the rest of the data we are interested in
+
+```text
+['Tonight', 'Tuesday', 'TuesdayNight', 'Wednesday', 'WednesdayNight', 'Thursday', 'ThursdayNight', 'Friday', 'FridayNight']
+['IncreasingClouds', 'Patchy Fogthen Sunny', 'IncreasingClouds', 'Patchy Fogthen Sunny', 'Patchy Fog', 'Patchy Fogthen Sunny', 'Patchy Fog', 'Patchy Fogthen Sunny', 'Patchy Fog']
+['Low: 58 °F', 'High: 70 °F', 'Low: 58 °F', 'High: 70 °F', 'Low: 57 °F', 'High: 68 °F', 'Low: 57 °F', 'High: 68 °F', 'Low: 57 °F']
+['Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. ', ... , 'Friday Night: Patchy fog after 11pm.  Otherwise, mostly cloudy, with a low around 57.']
+```
+---
 
