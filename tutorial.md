@@ -107,7 +107,7 @@ id="seven-day-forecast"
 ```
 You can pass it that criteria into the find command
 
-``python
+```python
 seven_day = soup.find(id="seven-day-forecast")
 print(seven_day)
 ```
@@ -124,5 +124,12 @@ To take a closer look at this we can grab the first forecast_items element and p
 
 ```python
 tonight = forecast_items[0]
-print(tonight.prettify())
+print(tonight)
+```
+We get this
+
+```html
+<div class="tombstone-container">
+<p class="period-name">Tonight<br/><br/></p>
+<p><img alt="Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. " class="forecast-icon" src="newimages/medium/nbkn.png" title="Tonight: Increasing clouds, with a low around 58. West wind 16 to 21 mph decreasing to 10 to 15 mph after midnight. Winds could gust as high as 26 mph. "/></p><p class="short-desc">Increasing<br/>Clouds</p><p class="temp temp-low">Low: 58 °F</p></div>
 ```
