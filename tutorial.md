@@ -17,7 +17,6 @@ Ready? To get started install bs4
 $ pip install beautifulsoup4
 ```
 ---
-
 # Getting to the data
 
 There are several ways to extract the data from the webpage before we start analysis. One of these is using 'requests'. Another option is to use 'urllib', which is little more limited. So after importing beautifulsoup import 'requests'
@@ -47,7 +46,6 @@ print(page.content)
 ```
 
 ---
-
 # Exploring the Page and Data
 
 Now that we have the data we can start exploring it. For starters, lets see if we can find the title of the page
@@ -69,8 +67,8 @@ You get this
 ```text
 title
 ```
-
-A little more exploring. 
+---
+# A Little More Exploring 
 
 Let's see if we can find the first h1 value and what attributes it has
 
@@ -96,5 +94,35 @@ For which I get this.
 ```css
 font-size: 11pt;
 ```
-
+Time for some real work
 ---
+# Extracting for We Really Care About
+
+To find an element or piece of data in the DOM you can simply use 'find'. In the case of this walkthrough we want weather data and we're interested in that section.
+
+By inspecting using web developer on this page we find the section we are interested in and how we can look it up using
+
+```css
+id="seven-day-forecast"
+```
+You can pass it that criteria into the find command
+
+``python
+seven_day = soup.find(id="seven-day-forecast")
+print(seven_day)
+```
+From the results you will notice there are multiple day forecasts and we probably want to grab them all. To grab several elements which match a certain condition we use 'find_all'.
+
+In this next step we'll grab all the forecasts. If you look at previous results you'll notice that all forcasts have this in common: 'class="tombstone-container"'
+
+We'll use this then to grab all the forcasts (it's quite possible that there may be more than one atttibute that is unique).
+
+```python
+forecast_items = seven_day.find_all(class_="tombstone-container")
+```
+To take a closer look at this we can grab the first forecast_items element and print out what it looks like
+
+```python
+tonight = forecast_items[0]
+print(tonight.prettify())
+```
