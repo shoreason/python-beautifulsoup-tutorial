@@ -40,7 +40,7 @@ It's up to you if you want to create a special variable for the url you are inte
 ```python
 url = 'http://forecast.weather.gov/MapClick.php?lat=37.7772&lon=-122.4168#.WYjKidPyvdQ' # url of whatever page you are interested in
 page = requests.get(url)
-soup = BeautifulSoup(page.text,'html.parser')
+soup = BeautifulSoup(page.content,'html.parser')
 ```
 --
 
